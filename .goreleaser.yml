@@ -1,10 +1,10 @@
-project_name: {{ .PluginName }}
+project_name: krew-download
 release:
   github:
-    owner: {{ .Owner }}
-    name: {{ .Repo }}
+    owner: daniel-garcia
+    name: krew-download
 builds:
-  - id: {{ .PluginName }}
+  - id: krew-download
     goos:
     - linux
     - windows
@@ -17,12 +17,12 @@ builds:
       - GO111MODULE=on
     main: cmd/plugin/main.go
     ldflags: -s -w
-      -X github.com/{{ .Owner }}/{{ .Repo }}/pkg/version.version=
+      -X github.com/daniel-garcia/krew-download/pkg/version.version=
 archives:
-  - id: {{ .PluginName }}
+  - id: krew-download
     builds:
-    - {{ .PluginName }}
-    name_template: {{ `"{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}"` }}
+    - krew-download
+    name_template: "{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}"
     format_overrides:
     - goos: windows
       format: zip
