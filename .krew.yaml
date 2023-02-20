@@ -1,0 +1,49 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: krew-dowload
+spec:
+  version: $RELEASE_VERSION
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/Infoblox-CTO/krew-download/releases/download/$RELEASE_VERSION/krew-download_linux_amd64.tar.gz
+    sha256: ""
+    files:
+    - from: "./krew-download"
+      to: "krew-dowload"
+    bin: "krew-download"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/Infoblox-CTO/krew-download/releases/download/$RELEASE_VERSION/krew-download_darwin_amd64.tar.gz
+    sha256: ""
+    files:
+    - from: "./krew-download"
+      to: "krew-dowload"
+    bin: "krew-download"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/Infoblox-CTO/krew-download/releases/download/$RELEASE_VERSION/krew-download_windows_amd64.zip
+    sha256: ""
+    files:
+    - from: "/krew-download.exe"
+      to: "krew-dowload.exe"
+    bin: "krew-download.exe"
+  shortDescription: A new plugin
+  homepage: https://github.com/Infoblox-CTO/krew-download
+  caveats: |
+    Usage:
+      $ kubectl b1 box
+
+    For additional options:
+      $ kubectl b1 box --help
+      or https://github.com/Infoblox-CTO/krew-download/blob/$RELEASE_VERSION/doc/USAGE.md
+
+  description: |
+    This is a new plugin
