@@ -53,7 +53,7 @@ func main() {
 		log.Printf("could not marshal plugin: %s", err)
 		os.Exit(1)
 	}
-	if err := os.WriteFile(krewDowload, bs, 0644); err != nil {
+	if err := os.WriteFile(pluginDest, bs, 0644); err != nil {
 		log.Printf("could not write plugin: %s", err)
 		os.Exit(1)
 	}
