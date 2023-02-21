@@ -9,6 +9,7 @@ test:
 bin: fmt vet
 	go build -o bin/krew-download github.com/daniel-garcia/krew-download/cmd/plugin
 
+
 .PHONY: manifest
 manifest:
 	mkdir -p plugins
