@@ -13,6 +13,7 @@ import (
 func main() {
 
 	pluginFile := ".krew.yaml"
+	pluginDest := "plugins/krew-download.yaml"
 	bs, err := ioutil.ReadFile(pluginFile)
 	if err != nil {
 		log.Printf("could not open %s: %s", pluginFile, err)
@@ -52,7 +53,7 @@ func main() {
 		log.Printf("could not marshal plugin: %s", err)
 		os.Exit(1)
 	}
-	if err := os.WriteFile(pluginFile, bs, 0644); err != nil {
+	if err := os.WriteFile(krewDowload, bs, 0644); err != nil {
 		log.Printf("could not write plugin: %s", err)
 		os.Exit(1)
 	}
