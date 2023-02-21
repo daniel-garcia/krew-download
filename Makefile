@@ -11,7 +11,7 @@ bin: fmt vet
 
 .PHONY: manifest
 manifest:
-	make -p plugins
+	mkdir -p plugins
 	go run hack/generate_index/main.go
 
 .PHONY: fmt
