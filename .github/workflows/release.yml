@@ -9,6 +9,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@master
+        pat: {{ secrets.PUBLISH_PAT }}
       - name: Setup Go
         uses: actions/setup-go@v1
         with:
@@ -19,7 +20,7 @@ jobs:
           version: latest
           args: release --clean
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PUBLISH_PAT }}
       - name: Generate manifest
         run: |
           make manifest
