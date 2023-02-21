@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@master
-        pat: {{ secrets.PUBLISH_PAT }}
+        pat: ${{ secrets.PUBLISH_PAT }}
       - name: Setup Go
         uses: actions/setup-go@v1
         with:
