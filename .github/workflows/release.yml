@@ -9,6 +9,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@master
+        ref: ${{ github.ref_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.PUBLISH_PAT }}
       - name: Setup Go
